@@ -38,6 +38,9 @@ app.use(rateLimit({
 app.use("/api/v1/auth", authRouter)
 app.use("/api/v1/job", authMiddleware, jobRouter)
 app.use(errorHandlerMiddleware)
+app.get("/", (req, res) => {
+    res.send("Welcome to Job Api")
+})
 
 const start = async () => {
     try {
